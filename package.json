@@ -51,7 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",
-    "extra-memoize": "^0.5.0",
+    "extra-memoize": "^0.6.0",
     "extra-promise": "^1.0.2",
     "husky": "^4.3.8",
     "jest": "^27.5.1",
@@ -72,6 +72,6 @@
     "@blackglory/structures": "^0.4.0"
   },
   "peerDependencies": {
-    "extra-memoize": "^0.5.0"
+    "extra-memoize": "^0.6.0"
   }
 }

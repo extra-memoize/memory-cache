@@ -1,5 +1,5 @@
 import { ExpirableMap } from '@blackglory/structures'
-import { ICache } from 'extra-memoize'
+import { ICache, State } from 'extra-memoize'
 
 export class ExpirableCache<T = any> implements ICache<T> {
   private map: ExpirableMap<string, T>
@@ -8,8 +8,12 @@ export class ExpirableCache<T = any> implements ICache<T> {
     this.map = new ExpirableMap()
   }
 
-  get(key: string): T | undefined {
-    return this.map.get(key)
+  get(key: string): [State.Miss] | [State.Hit, T] {
+    if (this.map.has(key)) {
+      return [State.Hit, this.map.get(key)!]
+    } else {
+      return [State.Miss]
+    }
   }
 
   set(key: string, value: T): void {

@@ -1,6 +1,5 @@
 import { ExpirableCache } from './expirable-cache'
-import { IStaleWhileRevalidateCache } from 'extra-memoize'
-import { isUndefined } from '@blackglory/prelude'
+import { IStaleWhileRevalidateCache, State } from 'extra-memoize'
 
 interface IRecord<T> {
   updatedAt: number
@@ -21,14 +20,20 @@ export class ExpirableCacheWithStaleWhileRevalidate<T = any> implements IStaleWh
     })
   }
 
-  get(key: string): T | undefined {
-    return this.cache.get(key)?.value
+  get(key: string): [State.Miss] | [State.Hit | State.StaleWhileRevalidate, T] {
+    const [state, record] = this.cache.get(key)
+    if (state === State.Miss) {
+      return [State.Miss]
+    } else {
+      if (this.isStaleWhileRevalidate(record)) {
+        return [State.StaleWhileRevalidate, record.value]
+      } else {
+        return [State.Hit, record.value]
+      }
+    }
   }
 
-  isStaleWhileRevalidate(key: string): boolean {
-    const record = this.cache.get(key)
-    if (isUndefined(record)) return false
-
+  private isStaleWhileRevalidate(record: IRecord<T>): boolean {
     return Date.now() - record.updatedAt > this.timeToLive
         && Date.now() - record.updatedAt <= this.timeToLive + this.staleWhileRevalidate
   }

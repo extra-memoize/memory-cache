@@ -1,5 +1,5 @@
 import { LRUMap } from '@blackglory/structures'
-import { ICache } from 'extra-memoize'
+import { ICache, State } from 'extra-memoize'
 
 export class LRUCache<T = any> implements ICache<T> {
   private map: LRUMap<string, T> 
@@ -12,8 +12,12 @@ export class LRUCache<T = any> implements ICache<T> {
     this.map.set(key, value)
   }
 
-  get(key: string): T | undefined {
-    return this.map.get(key)
+  get(key: string): [State.Miss] | [State.Hit, T] {
+    if (this.map.has(key)) {
+      return [State.Hit, this.map.get(key)!]
+    } else {
+      return [State.Miss]
+    }
   }
 
   clear(): void {
