@@ -32,12 +32,12 @@ describe('TLRUCache', () => {
     expect(cache.get('#3')).toStrictEqual([State.Hit, 3])
   })
 
-  test('clear(): void', () => {
-    const map = new TLRUCache(999, 999)
-    map.set('key', 'value')
+  test('clear', () => {
+    const cache = new TLRUCache(999, 999)
+    cache.set('key', 'value')
     
-    map.clear()
+    cache.clear()
 
-    expect(map.get('key')).toStrictEqual([State.Miss])
+    expect(cache.get('key')).toStrictEqual([State.Miss])
   })
 })
