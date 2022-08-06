@@ -1,7 +1,7 @@
 import { LRUMap } from '@blackglory/structures'
 import { ICache, State } from 'extra-memoize'
 
-export class LRUCache<T = any> implements ICache<T> {
+export class LRUCache<T> implements ICache<T> {
   private map: LRUMap<string, T> 
 
   constructor(limit: number) {
