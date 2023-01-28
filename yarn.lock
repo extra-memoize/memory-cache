@@ -757,7 +757,7 @@
     iterable-operator "^1.2.1"
     justypes "^3.0.0"
 
-"@blackglory/structures@^0.11.3 || ^0.12.3", "@blackglory/structures@^0.12.2":
+"@blackglory/structures@^0.12.2":
   version "0.12.3"
   resolved "https://registry.yarnpkg.com/@blackglory/structures/-/structures-0.12.3.tgz#4f985d5210f88a8ac9040860abf9430af50cd5dc"
   integrity sha512-5/ph/i7/mwyM2Z1OCP0wZjAG4et2zmkjmxuHAnr5bFq8XPBXwNGoOSZJXZtNUPGKkZ7D4Wn8ezCiZhTSEcrflw==
