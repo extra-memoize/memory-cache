@@ -56,7 +56,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@blackglory/prelude": "^0.2.2",
+    "@blackglory/prelude": "^0.2.4",
     "@blackglory/structures": "^0.11.3"
   },
   "peerDependencies": {
