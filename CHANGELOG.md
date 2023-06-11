@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/extra-memoize/memory-cache/compare/v0.2.8...v0.2.9) (2023-06-11)
+
+
+### Bug Fixes
+
+* export src ([ce69a8c](https://github.com/extra-memoize/memory-cache/commit/ce69a8c33235ad6ea5234d2a2c13bc419060aa8f))
+
 ### [0.2.8](https://github.com/extra-memoize/memory-cache/compare/v0.2.7...v0.2.8) (2023-01-28)
 
 
