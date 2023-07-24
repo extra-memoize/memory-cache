@@ -1,3 +1,5 @@
+export * from './cache'
+
 export * from './lru-cache'
 
 export * from './expirable-cache'

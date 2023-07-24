@@ -7,6 +7,13 @@ yarn add @extra-memoize/memory-cache
 ```
 
 ## API
+### Cache
+```ts
+class Cache<T> implements ICache<T> {
+  clear(): void
+}
+```
+
 ### LRUCache
 ```ts
 class LRUCache<T> implements ICache<T> {
