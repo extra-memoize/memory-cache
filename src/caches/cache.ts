@@ -15,6 +15,10 @@ export class Cache<T> implements ICache<T> {
     }
   }
 
+  delete(key: string): void {
+    this.map.delete(key)
+  }
+
   clear(): void {
     this.map.clear()
   }

@@ -29,6 +29,25 @@ describe('Cache', () => {
     })
   })
 
+  describe('delete', () => {
+    test('item exists', () => {
+      const cache = new Cache()
+      cache.set('key', 'value')
+
+      cache.delete('key')
+
+      expect(cache.get('key')).toStrictEqual([State.Miss])
+    })
+
+    test('item does not exist', () => {
+      const cache = new Cache()
+
+      cache.delete('key')
+
+      expect(cache.get('key')).toStrictEqual([State.Miss])
+    })
+  })
+
   test('clear', () => {
     const cache = new Cache()
     cache.set('key', 'value')

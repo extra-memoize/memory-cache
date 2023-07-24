@@ -19,6 +19,7 @@ class Cache<T> implements ICache<T> {
 class LRUCache<T> implements ICache<T> {
   constructor(limit: number)
 
+  delete(key: string): void
   clear(): void
 }
 ```
