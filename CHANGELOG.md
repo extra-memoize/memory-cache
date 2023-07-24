@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/extra-memoize/memory-cache/compare/v0.2.9...v0.2.10) (2023-07-24)
+
+
+### Features
+
+* add `Cache#delete` ([09750c4](https://github.com/extra-memoize/memory-cache/commit/09750c470acee7e301a67f87e636d6cec58aa2ff))
+* add `Cache` ([812dfa0](https://github.com/extra-memoize/memory-cache/commit/812dfa018b9f17c39eb4be37f0bb54aa9009a290))
+
 ### [0.2.9](https://github.com/extra-memoize/memory-cache/compare/v0.2.8...v0.2.9) (2023-06-11)
 
 
