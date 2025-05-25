@@ -37,11 +37,11 @@ export class TLRUCacheWithStaleWhileRevalidateAndStaleIfError<T> implements ISta
       return [State.Miss]
     } else {
       const elapsed = Date.now() - record.updatedAt
-      if (elapsed <= this.timeToLive) {
+      if (elapsed < this.timeToLive) {
         return [State.Hit, record.value]
-      } else if (elapsed <= this.timeToLive + this.staleWhileRevalidate) {
+      } else if (elapsed < this.timeToLive + this.staleWhileRevalidate) {
         return [State.StaleWhileRevalidate, record.value]
-      } else if (elapsed <= this.timeToLive + this.staleWhileRevalidate + this.staleIfError) {
+      } else if (elapsed < this.timeToLive + this.staleWhileRevalidate + this.staleIfError) {
         return [State.StaleIfError, record.value]
       } else {
         // just in case

@@ -35,7 +35,7 @@ export class ExpirableCacheWithStaleWhileRevalidate<T> implements IStaleWhileRev
 
   private isStaleWhileRevalidate(record: IRecord<T>): boolean {
     const timestamp = Date.now()
-    return timestamp - record.updatedAt > this.timeToLive
-        && timestamp - record.updatedAt <= this.timeToLive + this.staleWhileRevalidate
+    return record.updatedAt + this.timeToLive <= timestamp
+        && record.updatedAt + this.timeToLive + this.staleWhileRevalidate > timestamp
   }
 }
