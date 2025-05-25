@@ -29,10 +29,10 @@ export class TLRUCacheWithStaleIfError<T> implements IStaleIfErrorCache<T> {
     if (state === State.Miss) {
       return [State.Miss]
     } else {
-      const elapsed = Date.now() - record.updatedAt
-      if (elapsed < this.timeToLive) {
+      const timestamp = Date.now()
+      if (record.updatedAt + this.timeToLive > timestamp) {
         return [State.Hit, record.value]
-      } else if (elapsed < this.timeToLive + this.staleIfError) {
+      } else if (record.updatedAt + this.timeToLive + this.staleIfError > timestamp) {
         return [State.StaleIfError, record.value]
       } else {
         // just in case
