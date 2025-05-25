@@ -38,7 +38,8 @@ export class TLRUCacheWithStaleWhileRevalidate<T> implements IStaleWhileRevalida
   }
 
   isStaleWhileRevalidate(record: IRecord<T>): boolean {
-    return Date.now() - record.updatedAt > this.timeToLive
-        && Date.now() - record.updatedAt <= this.timeToLive + this.staleWhileRevalidate
+    const timestamp = Date.now()
+    return timestamp - record.updatedAt > this.timeToLive
+        && timestamp - record.updatedAt <= this.timeToLive + this.staleWhileRevalidate
   }
 }
