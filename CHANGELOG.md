@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/extra-memoize/memory-cache/compare/v0.2.10...v0.2.11) (2025-05-25)
+
+
+### Bug Fixes
+
+* the algorithm about timestamp ([cb59ab1](https://github.com/extra-memoize/memory-cache/commit/cb59ab19403133f77490fb9104a33f3ddcf5b0fb))
+
 ### [0.2.10](https://github.com/extra-memoize/memory-cache/compare/v0.2.9...v0.2.10) (2023-07-24)
 
 
