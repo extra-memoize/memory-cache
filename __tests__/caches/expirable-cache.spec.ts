@@ -1,4 +1,5 @@
-import { ExpirableCache } from '@caches/expirable-cache'
+import { describe, test, expect } from 'vitest'
+import { ExpirableCache } from '@caches/expirable-cache.js'
 import { delay } from 'extra-promise'
 import { State } from 'extra-memoize'
 

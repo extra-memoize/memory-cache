@@ -1,4 +1,4 @@
-import { TLRUCache } from './tlru-cache'
+import { TLRUCache } from './tlru-cache.js'
 import { IStaleWhileRevalidateAndStaleIfErrorCache, State } from 'extra-memoize'
 
 interface IRecord<T> {

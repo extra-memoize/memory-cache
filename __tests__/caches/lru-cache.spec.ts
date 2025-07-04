@@ -1,4 +1,5 @@
-import { LRUCache } from '@caches/lru-cache'
+import { describe, test, expect } from 'vitest'
+import { LRUCache } from '@caches/lru-cache.js'
 import { State } from 'extra-memoize'
 
 describe('LRUCache', () => {

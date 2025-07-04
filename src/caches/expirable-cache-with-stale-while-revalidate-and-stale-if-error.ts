@@ -1,4 +1,4 @@
-import { ExpirableCache } from './expirable-cache'
+import { ExpirableCache } from './expirable-cache.js'
 import { IStaleWhileRevalidateAndStaleIfErrorCache, State } from 'extra-memoize'
 
 interface IRecord<T> {

@@ -1,4 +1,5 @@
-import { Cache } from '@caches/cache'
+import { describe, test, expect } from 'vitest'
+import { Cache } from '@caches/cache.js'
 import { State } from 'extra-memoize'
 
 describe('Cache', () => {

@@ -1,1 +1,1 @@
-export * from '@caches'
+export * from '@caches/index.js'
