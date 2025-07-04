@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/extra-memoize/memory-cache/compare/v0.2.11...v0.3.0) (2025-07-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* - CommonJS => ESM
+- It requires Node.js >= 22
+
+### Features
+
+* add support for `extra-memoize@^0.10.0` ([6d3e2ff](https://github.com/extra-memoize/memory-cache/commit/6d3e2fffc3a3cfe9403a5244d9ec39c7e92caea1))
+
 ### [0.2.11](https://github.com/extra-memoize/memory-cache/compare/v0.2.10...v0.2.11) (2025-05-25)
 
 
