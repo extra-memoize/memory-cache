@@ -29,17 +29,19 @@ export class TLRUCacheWithStaleWhileRevalidate<T> implements IStaleWhileRevalida
     if (state === State.Miss) {
       return [State.Miss]
     } else {
-      if (this.isStaleWhileRevalidate(record)) {
+      const timestamp = Date.now()
+      if (record.updatedAt + this.timeToLive > timestamp) {
+        return [State.Hit, record.value]
+      } else if (
+        record.updatedAt
+      + this.timeToLive
+      + this.staleWhileRevalidate
+      > timestamp
+      ) {
         return [State.StaleWhileRevalidate, record.value]
       } else {
-        return [State.Hit, record.value]
+        return [State.Miss]
       }
     }
-  }
-
-  isStaleWhileRevalidate(record: IRecord<T>): boolean {
-    const timestamp = Date.now()
-    return record.updatedAt + this.timeToLive <= timestamp
-        && record.updatedAt + this.timeToLive + this.staleWhileRevalidate > timestamp
   }
 }
